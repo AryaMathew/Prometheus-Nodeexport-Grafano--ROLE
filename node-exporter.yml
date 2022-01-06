@@ -1,0 +1,6 @@
+---
+- name: "Installation of  node-exporters"
+  hosts: targets
+  become: true
+  roles:
+    - node-exporter
