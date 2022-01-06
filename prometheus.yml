@@ -1,0 +1,7 @@
+---
+- name: "Installation of prometheus"
+  hosts: prometheus
+  become: true
+  roles:
+    - prometheus
+    - grafana
