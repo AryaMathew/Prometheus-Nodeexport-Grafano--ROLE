@@ -1,0 +1,17 @@
+---
+- name: "Copying the grafana.repo file to /etc/yum.repos.d"
+  copy:
+    src: grafana.repo
+    dest: /etc/yum.repos.d/grafana.repo
+
+- name: "Grafana Installation"
+  yum:
+    name: grafana
+    state: present
+
+- name: "Redtarting grafana"
+  service:
+    name: grafana-server
+    state: restarted
+    enabled: true
+
